@@ -1,31 +1,23 @@
 #include "malloc.h"
 
-char	*strtruc(char *s)
-{
-	int		a;
-	char	*dest;
-	int		longueur;
-
-	a = 0;
-	if (!s)
-		return (NULL);
-	longueur = ft_strlen(s);
-	dest = ft_malloc(sizeof(char) * (longueur + 1));
-	if (!dest)
-		return (NULL);
-	while (s[a] != '\0')
-	{
-		dest[a] = s[a];
-		a++;
-	}
-	dest[a] = '\0';
-	return (dest);
-}
-
 int main(void) {
-	char *str = "SALUT";
-	char *str2 = strtruc(str);
-
+	char *str = "CHAINE 1";
+	char *str2 = ft_malloc(sizeof(char) * (strlen(str) + 1));
+	int i = 0;
+	while (str[i]) {
+		str2[i] = str[i];
+		i++;
+	}
+	str2[i] = '\0';
 	printf("%s\n", str2);
-	return (EXIT_SUCCESS);
+	char *str3 = "CHAINE 2";
+	char *str4 = ft_malloc(sizeof(char) * (strlen(str3) + 1));
+	i = 0;
+	while (str3[i]) {
+		str4[i] = str3[i];
+		i++;
+	}
+	str4[i] = '\0';
+	printf("%s\n", str4);
+	printf("%s\n", str2);
 }
