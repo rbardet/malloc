@@ -30,6 +30,8 @@ typedef struct {
 typedef struct s_zone {
 	t_header header;
 	void *map;
+	void *start;
+	void *end;
 	struct s_zone *next;
 }	t_zone;
 

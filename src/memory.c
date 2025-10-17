@@ -40,6 +40,8 @@ void *alloc_zone(type __type, size_t size, size_t ogsize) {
 	node->map = map;
 	node->header.__type = __type;
 	node->header.size = size;
+	node->start = map;
+	node->end = map + size;
 	node->header.free = size - (sizeof(t_zone)) + ogsize;
 	node->next = NULL;
 	add_to_memory(node);
