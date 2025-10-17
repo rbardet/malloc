@@ -12,7 +12,8 @@ OBJ_DIR = obj
 SRCS = ${SRC_DIR}/malloc.c \
 ${SRC_DIR}/memory.c \
 ${SRC_DIR}/utils.c \
-${SRC_DIR}/main.c
+${SRC_DIR}/main.c \
+${SRC_DIR}/show_alloc.c
 
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 

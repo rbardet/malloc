@@ -8,13 +8,13 @@ void *ft_malloc(size_t size) {
 
 	type __type = alloc_type(size);
 	if (__type == LARGE) {
-		return (mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANON, NO_FILE, NO_OFFSET));
+		return (alloc_zone(__type, size, size));
 	}
 
 	void *free = find_free_zone(__type, size);
 	if (!free) {
 		size_t zone_size = alloc_size(__type);
-		free = alloc_zone(__type, zone_size);
+		free = alloc_zone(__type, zone_size, size);
 	}
 	return (free);
 }

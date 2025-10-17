@@ -37,8 +37,9 @@ extern t_zone *zone;
 
 void *ft_malloc(size_t size);
 type alloc_type(size_t size);
-void *alloc_zone(type __type, size_t size);
+void *alloc_zone(type __type, size_t size, size_t ogsize);
 size_t alloc_size(type __type);
 void *find_free_zone(type __type, size_t size);
+void show_alloc_mem();
 
 #endif

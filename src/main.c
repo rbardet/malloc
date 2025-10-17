@@ -4,6 +4,8 @@ int main(void) {
 	char *str = "CHAINE 1";
 	char *str2 = ft_malloc(sizeof(char) * (strlen(str) + 1));
 	int i = 0;
+	printf("ENUM SIZE: %lu\n", sizeof(type));
+	printf("HEADER SIZE: %lu\n", sizeof(t_header));
 	while (str[i]) {
 		str2[i] = str[i];
 		i++;
@@ -20,4 +22,6 @@ int main(void) {
 	str4[i] = '\0';
 	printf("%s\n", str4);
 	printf("%s\n", str2);
+	show_alloc_mem();
+	return (0);
 }
